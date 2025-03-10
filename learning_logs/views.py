@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Topic
-from .forms import TopicForm
+from .forms import TopicForm, EntryForm
 
 # Create your views here.
 def index(request):
@@ -38,3 +38,6 @@ def new_topic(request):
     # Display a blank or invalid form.
     context = {'form': form}
     return render(request, 'learning_logs/new_topic.html', context)
+
+def new_entry(request):
+    """Add a new entry fpr a particular Topic."""
